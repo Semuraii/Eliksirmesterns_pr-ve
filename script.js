@@ -18,7 +18,7 @@ function addIngredient(type) {
     cauldron[type]++;
     console.log(`${emojis[type]} La til 1 ${type} i gryta.`);
     updateUI();
-    updateStatus(`${emojis[type]} Added ${type}!`);
+    updateStatus(`${emojis[type]} La til 1 ${type}!`);
 }
 
 function updateUI() {
@@ -64,12 +64,12 @@ function resetCauldron() {
     }
 
     updateUI();
-    updateStatus("🧹 Cauldron reset! Start again.");
+    updateStatus("💀 Usj, dette var ikke riktig. Prøv igjen!");
     console.log("Cauldron has been reset.");
 }
 
 function showRecipe() {
-    const recipe = "Recipe: 2 Herbs 🌿, 1 Berry 🍓, 1 Mushroom 🍄";
+    const recipe = "Oppskrift: 2 Herbs 🌿, 1 Berry 🍓, 1 Mushroom 🍄";
     console.log(recipe);
     updateStatus("🕵️ " + recipe);
 }
