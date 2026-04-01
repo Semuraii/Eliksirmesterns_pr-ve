@@ -6,11 +6,19 @@ const cauldron = {
     flowers: 0
 };
 
+const emojis = {
+    herbs: "🌿",
+    berries: "🍓",
+    mushrooms: "🍄",
+    water: "💧",
+    flowers: "🌸"
+};
+
 function addIngredient(type) {
     cauldron[type]++;
-    console.log(`La til 1 ${type} i gryta.`);
+    console.log(`${emojis[type]} La til 1 ${type} i gryta.`);
     updateUI();
-    updateStatus(`La til ${type}!`);
+    updateStatus(`${emojis[type]} Added ${type}!`);
 }
 
 function updateUI() {
@@ -22,12 +30,12 @@ function updateUI() {
 }
 
 function printCauldron() {
-    console.log("\nGryta inneholder:");
-    console.log(`Herbs: ${cauldron.herbs}`);
-    console.log(`Berries: ${cauldron.berries}`);
-    console.log(`Mushrooms: ${cauldron.mushrooms}`);
-    console.log(`Water: ${cauldron.water}`);
-    console.log(`Flowers: ${cauldron.flowers}`);
+    console.log("\n🧪 Gryta inneholder:");
+    console.log(`${emojis.herbs} Herbs: ${cauldron.herbs}`);
+    console.log(`${emojis.berries} Berries: ${cauldron.berries}`);
+    console.log(`${emojis.mushrooms} Mushrooms: ${cauldron.mushrooms}`);
+    console.log(`${emojis.water} Water: ${cauldron.water}`);
+    console.log(`${emojis.flowers} Flowers: ${cauldron.flowers}`);
 }
 
 function checkPotion() {
@@ -41,12 +49,29 @@ function checkPotion() {
         cauldron.flowers === 0;
 
     if (correct) {
-        console.log("\nGratulerer! Du har brygget en perfekt healing potion!");
-        updateStatus("✅ Perfekt potion!");
+        console.log("\n🎉 Gratulerer! Perfekt healing potion!");
+        updateStatus("🎉 Perfect potion! You feel stronger!");
     } else {
-        console.log("\nÆsj! Dette ble ikke en healing potion. Prøv igjen.");
-        updateStatus("❌ Feil oppskrift!");
+        console.log("\n💀 Feil potion...");
+        updateStatus("💀 Wrong potion! Resetting...");
+        resetCauldron();
     }
+}
+
+function resetCauldron() {
+    for (let key in cauldron) {
+        cauldron[key] = 0;
+    }
+
+    updateUI();
+    updateStatus("🧹 Cauldron reset! Start again.");
+    console.log("Cauldron has been reset.");
+}
+
+function showRecipe() {
+    const recipe = "Recipe: 2 Herbs 🌿, 1 Berry 🍓, 1 Mushroom 🍄";
+    console.log(recipe);
+    updateStatus("🕵️ " + recipe);
 }
 
 function updateStatus(message) {
