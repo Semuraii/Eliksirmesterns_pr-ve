@@ -43,6 +43,22 @@ button:hover {
     background-color: #e68900;
 }
 
+.reset-btn {
+    background-color: #f44336;
+}
+
+.reset-btn:hover {
+    background-color: #d32f2f;
+}
+
+.cheat-btn {
+    background-color: #9c27b0;
+}
+
+.cheat-btn:hover {
+    background-color: #7b1fa2;
+}
+
 #status {
     margin-top: 15px;
     font-weight: bold;
