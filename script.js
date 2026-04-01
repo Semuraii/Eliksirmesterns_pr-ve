@@ -50,7 +50,7 @@ function checkPotion() {
 
     if (correct) {
         console.log("\n🎉 Gratulerer! Perfekt healing potion!");
-        updateStatus("🎉 Perfect potion! You feel stronger!");
+        updateStatus("🎉 Perfekt! Du føler deg sterkere!");
     } else {
         console.log("\n💀 Feil potion...");
         updateStatus("💀 Wrong potion! Resetting...");
