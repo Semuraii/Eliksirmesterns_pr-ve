@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1e1e2f, #2e2e4d);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #a8ff60;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.brew-btn {
+    background-color: #ff9800;
+}
+
+.brew-btn:hover {
+    background-color: #e68900;
+}
+
+#status {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.inventory {
+    margin-top: 20px;
+    text-align: left;
+}
