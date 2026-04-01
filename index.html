@@ -4,63 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potion Recipe Game</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #1e1e2f, #2e2e4d);
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #a8ff60;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        button {
-            margin: 5px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background-color: #4caf50;
-            color: white;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-        }
-
-        .brew-btn {
-            background-color: #ff9800;
-        }
-
-        .brew-btn:hover {
-            background-color: #e68900;
-        }
-
-        #status {
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        .inventory {
-            margin-top: 20px;
-            text-align: left;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -90,61 +34,6 @@
         </div>
     </div>
 
-    <script>
-        const cauldron = {
-            herbs: 0,
-            berries: 0,
-            mushrooms: 0,
-            water: 0,
-            flowers: 0
-        };
-
-        function addIngredient(type) {
-            cauldron[type]++;
-            console.log(`La til 1 ${type} i gryta.`);
-            updateUI();
-            updateStatus(`La til ${type}!`);
-        }
-
-        function updateUI() {
-            document.getElementById("herbs").textContent = cauldron.herbs;
-            document.getElementById("berries").textContent = cauldron.berries;
-            document.getElementById("mushrooms").textContent = cauldron.mushrooms;
-            document.getElementById("water").textContent = cauldron.water;
-            document.getElementById("flowers").textContent = cauldron.flowers;
-        }
-
-        function printCauldron() {
-            console.log("\nGryta inneholder:");
-            console.log(`Herbs: ${cauldron.herbs}`);
-            console.log(`Berries: ${cauldron.berries}`);
-            console.log(`Mushrooms: ${cauldron.mushrooms}`);
-            console.log(`Water: ${cauldron.water}`);
-            console.log(`Flowers: ${cauldron.flowers}`);
-        }
-
-        function checkPotion() {
-            printCauldron();
-
-            const correct =
-                cauldron.herbs === 2 &&
-                cauldron.berries === 1 &&
-                cauldron.mushrooms === 1 &&
-                cauldron.water === 0 &&
-                cauldron.flowers === 0;
-
-            if (correct) {
-                console.log("\nGratulerer! Du har brygget en perfekt healing potion!");
-                updateStatus("✅ Perfekt potion!");
-            } else {
-                console.log("\nÆsj! Dette ble ikke en healing potion. Prøv igjen.");
-                updateStatus("❌ Feil oppskrift!");
-            }
-        }
-
-        function updateStatus(message) {
-            document.getElementById("status").textContent = message;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
